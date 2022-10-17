@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        .column {
+            height: 520px;
+            margin: 0 0 10px 10px;
+            float: left;
+            border: 5px solid rgb(160, 150, 240);
+            border-radius: 10px;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/f1216501c4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="logo">SnailExpress</div>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/about}">About</a></li>
+            <li><a class="active" th:href="@{/career}">Career</a></li>
+            <li><a th:href="@{/contacts}">Contacts</a></li>
+            <li><a th:href="@{/personalpage}">Account</a></li>
+        </ul>
+        <i class="fas fa-shopping-cart" id="cart"></i>
+        <input type="text" placeholder="Search.." />
+    </nav>
+    <h1>Career</h1>
+    <div class="column" style="width: 55%">
+        <h2>Our Team</h2>
+    </div>
+    <div class="column" style="width: 43%">
+        <h2>Vacancies</h2>
+    </div>
+    <footer>
+        <p>&copy SnailExpress</p>
+    </footer>
+</body>
+</html>

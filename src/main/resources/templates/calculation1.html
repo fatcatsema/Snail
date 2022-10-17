@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculation Page 1</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        .column {
+            float: left;
+            width: 50%;
+        }
+    </style>
+    <script src="js/scripts.js"></script>
+    <script src="https://kit.fontawesome.com/f1216501c4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="logo">SnailExpress</div>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/about}">About</a></li>
+            <li><a th:href="@{/career}">Career</a></li>
+            <li><a th:href="@{/contacts}">Contacts</a></li>
+            <li><a th:href="@{/personalpage}">Account</a></li>
+        </ul>
+        <i class="fas fa-shopping-cart" id="cart"></i>
+        <input type="text" placeholder="Search.." />
+    </nav>
+    <h1>Calculate Your Shipment</h1>
+<!--     <form th:action="@{/calculation}" th:object="${cargo}" method="post" style="width: 800px; height: 440px">
+        <div class="column">
+            <select id="from" name="from">
+                <option disabled hidden selected>Choose 'From' station</option>
+                <option value="albany">Albany</option>
+                <option value="baltimore">Baltimore</option>
+                <option value="boston">Boston</option>
+                <option value="buffalo">Buffalo</option>
+                <option value="cleveland">Cleveland</option>
+                <option value="newyork">New York</option>
+                <option value="philadelphia">Philadelphia</option>
+                <option value="pittsburg">Pittsburg</option>
+                <option value="richmond">Richmond</option>
+                <option value="washington">Washington</option>
+            </select><br/>
+            <select id="to" name="to">
+                <option disabled hidden selected>Choose 'To' station</option>
+                <option value="albany">Albany</option>
+                <option value="baltimore">Baltimore</option>
+                <option value="boston">Boston</option>
+                <option value="buffalo">Buffalo</option>
+                <option value="cleveland">Cleveland</option>
+                <option value="newyork">New York</option>
+                <option value="philadelphia">Philadelphia</option>
+                <option value="pittsburg">Pittsburg</option>
+                <option value="richmond">Richmond</option>
+                <option value="washington">Washington</option>
+            </select><br/>
+            <input type="number" id="weight" name="weight" placeholder="Input weight in pounds" /><br/>
+            <select id="cargotype" name="cargotype">
+                <option disabled hidden selected>Choose Type of Cargo</option>
+                <option value="ordinary">Ordinary</option>
+                <option value="hazard">Hazard</option>
+            </select><br/>
+            <select id="shipmenttype" name="shipmenttype">
+                <option disabled hidden selected>Choose Type of Shipment</option>
+                <option value="regular">Regular</option>
+                <option value="express">Express</option>
+            </select><br/>
+        </div>
+        <div class="column">
+            <input type="button" value="CALCULATE" onclick="calculateShippingCost()" /><br/><br/>
+            <output style="width: 300px; color: white; font-size: 25px" id="price"></output><br/><br/><br/><br/><br/>
+
+            <input type="submit" value="+ ADD TO CART" />
+                onsubmit="return "/>
+        </div>
+    </form> -->
+    
+    <div align="center">
+	    <span>Route:</span><span th:text="${cargo.route}"></span><br/>
+	    <span>Weight:</span><span th:text="${cargo.weight}"></span><br/>
+	    <span>cargo type:</span><span th:text="${cargo.cargoType}"></span><br/>
+	    <span>shipping type:</span><span th:text="${cargo.shippingType}"></span><br/>
+	    <span>price:</span><span th:text="${cargo.price}"></span><br/><!--  -->
+	    <span>Phone:</span><span th:text="${cargo.shoppingCart}"></span><br/>
+	</div>
+    <footer>
+        <p>&copy SnailExpress</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-us" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Page</title>
+	<link rel="stylesheet" href="css/styles.css" />
+    <style>
+        .column {
+            float: left;
+            width: 50%;
+        }
+    </style>
+     <script src="js/scripts.js"></script>
+     <script src="https://kit.fontawesome.com/f1216501c4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="logo">SnailExpress</div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="career.html">Career</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li><a class="active" th:href="@{/personalpage}">Account</a></li>
+            </ul>
+            <i class="fas fa-shopping-cart" id="cart"></i>
+            <input type="text" placeholder="Search..">
+        </nav>
+        <h1>Registration Form</h1>
+        <form th:action="@{/registration}" th:object="${customer}" method="post" style="width: 800px; height: 440px">
+            <div class="column">
+                <input type="text" th:field="*{firstName}" placeholder="Enter your First Name" required
+                    pattern="[a-zA-Z]{1, 20}" /><br/>
+                <input type="text" th:field="*{lastName}" placeholder="Enter your Last Name" required
+                    pattern="[a-zA-Z]{1, 20}" /><br/>
+                <label>Date of Birth:</label>
+                <input type="date" id="dob" th:field="*{dob}" required /><br/>
+                <input type="text" th:field="*{address}" placeholder="Enter your Address" required
+                    pattern="[a-zA-Z0-9-]{1, 50}" />
+            </div>
+            <div class="column">
+                <input type="text" th:field="*{zipCode}" placeholder="Enter your Zip Code" required pattern="[0-9]{5}" /><br/>
+                <input type="tel" th:field="*{phone}" placeholder="Enter your Phone Number" required pattern="[0-9]{10}" /><br/>
+                <input type="email" th:field="*{email}" placeholder="Enter your Email" required
+                    pattern="(\w\.?)+@[\w\.-]+\.\w{2,}" /><br/>
+                <input type="password" th:field="*{password}" placeholder="Enter your Password" required
+                    minlength="8" maxlength="15" /><br/>
+                <input type="submit" value="SUBMIT" onclick="formatDate()" />
+            </div>
+        </form>
+        <footer>
+            <p>&copy SnailExpress</p>
+        </footer>
+</body>
+</html>

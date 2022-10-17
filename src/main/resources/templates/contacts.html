@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-us" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacts</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .column {
+            height: 520px;
+            margin: 0 0 10px 10px;
+            float: left;
+            border: 5px solid rgb(160, 150, 240);
+            border-radius: 10px;
+        }
+        .class1 {
+            margin: 30px 0 0 80px;
+            font-size: 18px;
+        }
+        div p {
+            margin: 30px 0 0 40px;
+            font-size: 18px;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/f1216501c4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="logo">SnailExpress</div>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/about}">About</a></li>
+            <li><a th:href="@{/career}">Career</a></li>
+            <li><a class="active" th:href="@{/contacts}">Contacts</a></li>
+            <li><a th:href="@{/personalpage}">Account</a></li>
+        </ul>
+        <i class="fas fa-shopping-cart" id="cart"></i>
+        <input type="text" placeholder="Search.." />
+    </nav>
+    <h1>Contacts</h1>
+    <div class="column" style="width: 40%">
+        <h2>CEO</h2>
+        <p style="margin: 30px 20px 20px 20px; text-align: justify"><img style="margin: 20px; float: left" src="images/ceo.jpg" alt="ceo" />
+        Dominic "Dom" Toretto is a fictional character and one of the two main 
+        protagonists of the Fast & Furious franchise. He is portrayed by Vin Diesel 
+        and first appeared on film, alongside the other protagonist Brian O'Conner, in 
+        The Fast and the Furious (2001). Dominic was created by screenwriter Gary Scott Thompson, 
+        who was inspired by an article on street racing that was published in the May 1998 issue 
+        of Vibe magazine, while Diesel was heavily sought after to play the character. As the 
+        patriarch of a group of street racers, Dom acts as an influential voice, being forced 
+        into the role as primary caregiver following his father's untimely passing. As the leader, 
+        he initially worked as an auto mechanic, but eventually progressed to orchestrating carjackings, 
+        a multi-million dollar heist, and illicit jobs for government agencies.</p>
+    </div>
+    <div class="column" style="width: 58%">
+        <h2>Contacts</h2>
+        <div>
+        	<img style="float: right; margin: 30px 100px 20px 20px" src="images/snailmap.png" alt="main office" />
+	        <h3 class="class1">Address</h3>
+	        <p>45 Rockefeller Plaza, New York, NY 10111</p><br/>
+	        <h3 class="class1">Phone</h3>
+	        <p>444-555-11-22</p>
+	        <h3 class="class1">Email</h3>
+	        <p>snailexpress@yahoo.com</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy SnailExpress</p>
+    </footer>
+</body>
+</html>

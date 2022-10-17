@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en-us" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Station</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+    </style>
+    <script src="https://kit.fontawesome.com/f1216501c4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="logo">SnailExpress</div>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/about}">About</a></li>
+            <li><a th:href="@{/career}">Career</a></li>
+            <li><a th:href="@{/contacts}">Contacts</a></li>
+            <li><a class="active" th:href="@{/personalpage}">Account</a></li>
+        </ul>
+        <i class="fas fa-shopping-cart" id="cart"></i>
+        <input type="text" placeholder="Search.." />
+    </nav>
+    <h2>Hello, "User"</h2>
+    <p>User data</p>
+    <p>Cart</p>
+    <footer>
+        <p>&copy SnailExpress</p>
+    </footer>
+</body>
+</html>
