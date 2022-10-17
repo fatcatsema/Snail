@@ -1,15 +1,9 @@
-// Function to calculate shipping cost
+/*// Function to calculate shipping cost
 function calculateShippingCost() {
     
     // determine a route based on two stations ('from' and 'to')
     
     let rate;
-    
-    
-    
-    
-    
-    
     
     // weight
     let weight = document.getElementById("weight").value;
@@ -30,7 +24,7 @@ function calculateShippingCost() {
 
     // calculate the total price of a shipping
     document.getElementById("price").innerHTML = "Total  $ " + (weight * cargoIndex * shipmentIndex);
-}
+}*/
 
 
 // function to format date type of 'dob' field

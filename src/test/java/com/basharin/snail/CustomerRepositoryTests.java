@@ -12,7 +12,7 @@ import org.springframework.test.annotation.Rollback;
 
 import com.basharin.snail.entity.Customer;
 import com.basharin.snail.repository.CustomerRepository;
-import com.basharin.snail.repository.ZipCodeRepository;
+import com.basharin.snail.services.ZipCodeServices;
 
 
 @DataJpaTest
@@ -22,11 +22,10 @@ public class CustomerRepositoryTests {
 	
 	@Autowired
 	private TestEntityManager entityManager;
-	
 	@Autowired
 	private CustomerRepository customerRepo;
 	@Autowired
-	private ZipCodeRepository zipCodeRepo;
+	private ZipCodeServices zipCodeService;
 	
 	@Test
 	public void testCreateCustomer() {
@@ -36,14 +35,15 @@ public class CustomerRepositoryTests {
 		customer.setLastName("Basharin");
 		customer.setDob("1985-06-21");
 		customer.setAddress("213 Lockart Ln");
-		customer.setZipCode(zipCodeRepo.findByCode("02113"));
+		customer.setZipCode(zipCodeService.findByCode("02113"));
+//		customer.setZipCode("19116");
 		customer.setPhone("484-515-6024");
 		customer.setEmail("mishabasharin@gamil.com");
-//		customer.setPassword("Laverda2015$");
+		customer.setPassword("Abc1234567");
 		
-		Customer savedUser = customerRepo.save(customer);
-		Customer existUser = entityManager.find(Customer.class, savedUser.getId());
+		Customer savedCustomer = customerRepo.save(customer);
+		Customer existCustomer = entityManager.find(Customer.class, savedCustomer.getId());
 		
-		assertThat(customer.getEmail()).isEqualTo(existUser.getEmail());
+		assertThat(customer.getEmail()).isEqualTo(existCustomer.getEmail());
 	}
 }

@@ -61,16 +61,16 @@ public class Customer implements Serializable {
 	@Column(name = "email", columnDefinition = "VARCHAR(25) NOT NULL UNIQUE")
 	String email;
 	
-//	@Column(name = "password", columnDefinition = "VARCHAR(15) NOT NULL")
-//	String password;
+	@Column(name = "password", columnDefinition = "VARCHAR(15) NOT NULL")
+	String password;
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "zip_code", columnDefinition = "VARCHAR(5) NOT NULL")
 	ZipCode zipCode;
 	
-	@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	Set<CustomerOrder> customerOrders;
-	
-	@OneToOne(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
-	ShoppingCart shoppingCart;
+//	@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//	Set<CustomerOrder> customerOrders;
+//	
+//	@OneToOne(mappedBy = "customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
+//	ShoppingCart shoppingCart;
 }

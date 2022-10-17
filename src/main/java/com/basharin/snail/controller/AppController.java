@@ -77,17 +77,12 @@ public class AppController {
 	    return "registration_success";
 	}
 	
-//	@PostMapping("/registration2")
+//	@PostMapping("/registration")
 //	public String processRegister(Customer customer) {
 //		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 //		String encodedPassword = passwordEncoder.encode(customer.getPassword());
 //		customer.setPassword(encodedPassword);
 //		customerRepository.save(customer);
 //		return "register_success_2";
-//	}
-	
-//	@PostMapping("/calculation")
-//	public String processCalculation(@ModelAttribute("cargo") Rate rate, CargoType cargoType, ShippingType shippingType, Double weight) {
-//		return "calculation1";
 //	}
 }

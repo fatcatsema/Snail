@@ -51,10 +51,4 @@ public class ZipCode implements Serializable {
 	
 	@OneToMany(mappedBy = "zipCode", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	Set<Station> stations;
-
-//	public ZipCode(String code, String city, String state) {
-//		this.code = code;
-//		this.city = city;
-//		this.state = state;
-//	}
 }
