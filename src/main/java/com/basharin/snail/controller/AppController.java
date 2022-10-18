@@ -90,7 +90,7 @@ public class AppController {
 	}
 	
     @PostMapping("/registration/save")
-    public String registration(@Validated @ModelAttribute("customer") CustomerDto customerDto, BindingResult result, Model model){
+    public String registerCustomer(@Validated @ModelAttribute("customer") CustomerDto customerDto, BindingResult result, Model model){
     	
 		Customer existingCustomer = customerService.findCustomerByEmail(customerDto.getEmail());
 

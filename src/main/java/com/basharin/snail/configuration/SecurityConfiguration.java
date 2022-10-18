@@ -23,24 +23,26 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .authorizeRequests()
-//                .antMatchers("/register/**").permitAll()
-                .antMatchers("/registration").permitAll()
-                .antMatchers("/").permitAll()
-//                .antMatchers("/users").hasRole("ADMIN")
+        	.authorizeRequests()
+        		.antMatchers("/").permitAll()
+                .antMatchers("/about").permitAll()
+                .antMatchers("/career").permitAll()
+                .antMatchers("/contacts").permitAll()
+                .antMatchers("/tracking").permitAll()
+                .antMatchers("/calculation").permitAll()
+                .antMatchers("/customerservice").permitAll()
+                .antMatchers("/registration/**").permitAll()
                 .and()
-                .formLogin(
-                        form -> form
-                                .loginPage("/login")
-                                .loginProcessingUrl("/login")
-                                .defaultSuccessUrl("/customers")
-                                .permitAll()
-                ).logout(
-                        logout -> logout
-                                .logoutRequestMatcher(new AntPathRequestMatcher("/"))
-                                .permitAll()
-
-                );
+            .formLogin()
+            	.loginPage("/login")
+            	.loginProcessingUrl("/login")
+            	.defaultSuccessUrl("/customers")
+            	.permitAll()
+            	.and()
+            .logout()
+            	.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+            	.logoutSuccessUrl("/")
+            	.permitAll();
         return http.build();
     }
 }
