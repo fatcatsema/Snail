@@ -15,8 +15,7 @@ public class ZipCodeServices {
 	@Autowired
 	private ZipCodeRepository zipCodeRepository;
 	
-	public ZipCode findByCode(String code) {
-		
+	public ZipCode findZipCodeByCode(String code) {
 		List<ZipCode> zipCodes = zipCodeRepository.findAll();
 		for (ZipCode zipCode : zipCodes) {
 			if (zipCode.getCode().equals(code)) {

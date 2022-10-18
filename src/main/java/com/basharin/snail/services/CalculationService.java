@@ -8,13 +8,13 @@ import org.springframework.stereotype.Component;
 public class CalculationService {
 	
 	@Autowired
-	public CargoTypeServices cargoTypeService;
+	private CargoTypeServices cargoTypeService;
 	@Autowired
-	public ShippingTypeServices shippingTypeService;
+	private ShippingTypeServices shippingTypeService;
 	@Autowired
-	public StationServices stationService;
+	private StationServices stationService;
 	@Autowired
-	public RateServices rateService;
+	private RateServices rateService;
 	
 	public Double calculatePrice(String from, String to, String cargoType, String shippingType, Double weight) {
 		

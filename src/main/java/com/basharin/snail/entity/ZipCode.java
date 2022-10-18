@@ -1,16 +1,12 @@
 package com.basharin.snail.entity;
 
 import java.io.Serializable;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AccessLevel;
@@ -35,7 +31,7 @@ public class ZipCode implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	int id;
+	Long id;
 	
 	@Column(name = "code", columnDefinition = "VARCHAR(5) NOT NULL UNIQUE")
 	String code;
@@ -45,10 +41,4 @@ public class ZipCode implements Serializable {
 	
 	@Column(name = "state", columnDefinition = "VARCHAR(25) NOT NULL")
 	String state;
-	
-	@OneToMany(mappedBy = "zipCode", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	Set<Customer> customers;
-	
-	@OneToMany(mappedBy = "zipCode", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	Set<Station> stations;
 }

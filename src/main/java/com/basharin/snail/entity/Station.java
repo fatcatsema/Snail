@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,7 +33,7 @@ public class Station implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	int id;
+	Long id;
 	
 	@Column(name = "code", columnDefinition = "VARCHAR(3) NOT NULL UNIQUE")
 	String code;
@@ -45,7 +44,7 @@ public class Station implements Serializable {
 	@Column(name = "address", columnDefinition = "VARCHAR(50) NOT NULL")
 	String address;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "zip_code", columnDefinition = "VARCHAR(5) NOT NULL")
+	@ManyToOne(targetEntity = ZipCode.class)
+    @JoinColumn(name = "zip_code", referencedColumnName = "code")
 	ZipCode zipCode;
 }

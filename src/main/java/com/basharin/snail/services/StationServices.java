@@ -13,7 +13,7 @@ import com.basharin.snail.repository.StationRepository;
 public class StationServices {
 	
 	@Autowired
-	public StationRepository stationRepository;
+	private StationRepository stationRepository;
 	
 	public Station findByName(String name) {
 		List<Station> stations = stationRepository.findAll();

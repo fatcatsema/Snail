@@ -9,4 +9,5 @@ import com.basharin.snail.entity.Customer;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
+	public Customer findCustomerByEmail(String email);
 }

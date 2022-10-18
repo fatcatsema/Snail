@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Registration Page</title>
 	<link rel="stylesheet" href="css/styles.css" />
     <style>
@@ -27,7 +27,7 @@
             <input type="text" placeholder="Search..">
         </nav>
         <h1>Registration Form</h1>
-        <form th:action="@{/registration}" th:object="${customer}" method="post" style="width: 800px; height: 440px">
+        <form th:action="@{/registration/save}" th:object="${customer}" method="post" style="width: 800px; height: 440px">
             <div class="column">
                 <input type="text" th:field="*{firstName}" placeholder="Enter your First Name" required
                     pattern="[a-zA-Z]{1, 20}" /><br/>
@@ -39,12 +39,11 @@
                     pattern="[a-zA-Z0-9-]{1, 50}" />
             </div>
             <div class="column">
-                <input type="text" th:field="*{zipCode}" placeholder="Enter your Zip Code" required pattern="[0-9]{5}" /><br/>
+                <input type="text" name="zipcode" th:field="*{zipCode}" placeholder="Enter your ZIP Code" required pattern="[0-9]{5}" /><br/>
                 <input type="tel" th:field="*{phone}" placeholder="Enter your Phone Number" required pattern="[0-9]{10}" /><br/>
                 <input type="email" th:field="*{email}" placeholder="Enter your Email" required
                     pattern="(\w\.?)+@[\w\.-]+\.\w{2,}" /><br/>
-                <input type="password" th:field="*{password}" placeholder="Enter your Password" required
-                    minlength="8" maxlength="15" /><br/>
+                <input type="password" th:field="*{password}" placeholder="Enter your Password" required minlength="8" maxlength="15" /><br/>
                 <input type="submit" value="SUBMIT" onclick="formatDate()" />
                 
             </div>

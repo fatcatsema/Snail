@@ -5,13 +5,11 @@ import java.math.BigDecimal;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AccessLevel;
@@ -31,12 +29,12 @@ import lombok.experimental.FieldDefaults;
 @Table(name = "cargo")
 public class Cargo implements Serializable {
 	
-	private static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	int id;
+	Long id;
 	
 	@Column(name = "weight", columnDefinition = "DECIMAL(10,1) NOT NULL")
 	BigDecimal weight;
@@ -44,22 +42,19 @@ public class Cargo implements Serializable {
 	@Column(name = "price", columnDefinition = "DECIMAL(10,2) NOT NULL")
 	BigDecimal price;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "route", columnDefinition = "VARCHAR(6) NOT NULL")
+	@ManyToOne(targetEntity = Rate.class)
+    @JoinColumn(name = "rate", referencedColumnName = "route")
 	Rate rate;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "cargo_type", columnDefinition = "VARCHAR(10) NOT NULL")
+	@ManyToOne(targetEntity = CargoType.class)
+    @JoinColumn(name = "cargo_type", referencedColumnName = "type")
 	CargoType cargoType;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "shipping_type", columnDefinition = "VARCHAR(10) NOT NULL")
+	@ManyToOne(targetEntity = ShippingType.class)
+    @JoinColumn(name = "shipping_type", referencedColumnName = "type")
 	ShippingType shippingType;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "cart_id", columnDefinition = "INT NOT NULL")
+	@ManyToOne(targetEntity = ShoppingCart.class)
+	@JoinColumn(name = "cart_id", referencedColumnName = "id")
 	ShoppingCart shoppingCart;
-	
-	@OneToOne(mappedBy = "cargo")
-    CustomerOrder customerOrder;
 }

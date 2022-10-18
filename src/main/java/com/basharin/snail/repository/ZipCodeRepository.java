@@ -9,5 +9,5 @@ import com.basharin.snail.entity.ZipCode;
 @Repository
 public interface ZipCodeRepository extends JpaRepository<ZipCode, Long> {
 	
-	public ZipCode findByCode(String code);
+	public ZipCode findZipCodeByCode(String code);
 }

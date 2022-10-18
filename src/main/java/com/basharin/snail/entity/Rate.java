@@ -2,16 +2,12 @@ package com.basharin.snail.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AccessLevel;
@@ -36,7 +32,7 @@ public class Rate implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	int id;
+	Long id;
 	
 	@Column(name = "route", columnDefinition = "VARCHAR(6) NOT NULL UNIQUE")
 	String route;
@@ -49,7 +45,4 @@ public class Rate implements Serializable {
 	
 	@Column(name = "fee_per_lb", columnDefinition = "DECIMAL(5,2) NOT NULL")
 	BigDecimal feePerLb;
-	
-	@OneToMany(mappedBy = "rate", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	Set<Cargo> cargos;
 }

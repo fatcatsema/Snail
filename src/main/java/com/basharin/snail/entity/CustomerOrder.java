@@ -3,10 +3,8 @@ package com.basharin.snail.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -37,7 +35,7 @@ public class CustomerOrder implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
-	int id;
+	Long id;
 	
 	@Column(name = "order_date", columnDefinition = "DATE NOT NULL")
 	Date orderDate;
@@ -54,11 +52,11 @@ public class CustomerOrder implements Serializable {
 	@Column(name = "status", columnDefinition = "VARCHAR(10) NOT NULL")
 	String status;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cargo_id", columnDefinition = "INT NOT NULL")
+	@OneToOne(targetEntity = Cargo.class)
+    @JoinColumn(name = "cargo_id", referencedColumnName = "id")
     Cargo cargo;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "customer_id", columnDefinition = "INT NOT NULL")
+	@ManyToOne(targetEntity = Customer.class)
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
 	Customer customer;
 }

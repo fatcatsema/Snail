@@ -13,7 +13,7 @@ import com.basharin.snail.repository.RateRepository;
 public class RateServices {
 	
 	@Autowired
-	public RateRepository rateRepository;
+	private RateRepository rateRepository;
 	
 	public Rate findByRoute(String route) {
 		List<Rate> rates = rateRepository.findAll();
