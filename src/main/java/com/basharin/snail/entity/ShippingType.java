@@ -1,8 +1,6 @@
 package com.basharin.snail.entity;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +15,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
-
+/*
+ * POJO class of ShippingType entity.
+ */
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -38,5 +38,6 @@ public class ShippingType implements Serializable {
 	String type;
 	
 	@Column(name = "rate", columnDefinition = "DECIMAL(3,1) NOT NULL")
-	BigDecimal rate;
-}
+	Double rate;
+	
+} // close ShippingType class

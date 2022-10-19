@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Registration Page</title>
 	<link rel="stylesheet" href="css/styles.css" />
     <style>
@@ -17,35 +17,30 @@
 	<div class="logo">SnailExpress</div>
         <nav>
             <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="career.html">Career</a></li>
-                <li><a href="contacts.html">Contacts</a></li>
-                <li><a class="active" th:href="@{/personalpage}">Account</a></li>
+                <li><a th:href="@{/}">Home</a></li>
+		        <li><a th:href="@{/about}">About</a></li>
+		        <li><a th:href="@{/career}">Career</a></li>
+		        <li><a th:href="@{/contacts}">Contacts</a></li>
+		        <li><a th:href="@{/personalpage}">Account</a></li>
             </ul>
             <i class="fas fa-shopping-cart" id="cart"></i>
             <input type="text" placeholder="Search..">
         </nav>
         <h1>Registration Form</h1>
-        <form th:action="@{/registration/save}" th:object="${customer}" method="post" style="width: 800px; height: 440px">
+        <form th:action="@{/registration/save}" method="post" th:object="${customer}" style="width: 800px; height: 440px">
             <div class="column">
-                <input type="text" th:field="*{firstName}" placeholder="Enter your First Name" required
-                    pattern="[a-zA-Z]{1, 20}" /><br/>
-                <input type="text" th:field="*{lastName}" placeholder="Enter your Last Name" required
-                    pattern="[a-zA-Z]{1, 20}" /><br/>
+                <input type="text" th:field="*{firstName}" placeholder="Enter your First Name" required /><br/>
+                <input type="text" th:field="*{lastName}" placeholder="Enter your Last Name" required /><br/>
                 <label>Date of Birth:</label>
-                <input type="date" id="dob" th:field="*{dob}" required onchange="formatDate()"/><br/>
-                <input type="text" th:field="*{address}" placeholder="Enter your Address" required
-                    pattern="[a-zA-Z0-9-]{1, 50}" />
+                <input type="date" th:field="*{dob}" required  /><br/>
+                <input type="text" th:field="*{address}" placeholder="Enter your Address" required />
             </div>
             <div class="column">
-                <input type="text" id="zipcode" th:field="*{zipCode}" placeholder="Enter your ZIP Code" required pattern="[0-9]{5}" /><br/>
-                <input type="tel" th:field="*{phone}" placeholder="Enter your Phone Number" required pattern="[0-9]{10}" /><br/>
-                <input type="email" th:field="*{email}" placeholder="Enter your Email" required
-                    pattern="(\w\.?)+@[\w\.-]+\.\w{2,}" /><br/>
-                <input type="password" th:field="*{password}" placeholder="Enter your Password" required minlength="8" maxlength="15" /><br/>
+                <input type="text" th:field="*{zipCode}" placeholder="Enter your ZIP Code" required /><br/>
+                <input type="text" th:field="*{phone}" placeholder="Enter your Phone Number" required /><br/>
+                <input type="email" th:field="*{email}" placeholder="Enter your Email" required /><br/>
+                <input type="password" th:field="*{password}" placeholder="Enter your Password" required /><br/>
                 <input type="submit" value="SUBMIT" />
-                <!-- onchange="checkZipCode()" -->
             </div>
         </form>
         <footer>

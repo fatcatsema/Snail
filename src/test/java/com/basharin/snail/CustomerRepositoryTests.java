@@ -14,7 +14,9 @@ import org.springframework.test.annotation.Rollback;
 import com.basharin.snail.entity.Customer;
 import com.basharin.snail.repository.CustomerRepository;
 
-
+/*
+ * Class to test CustomerRepository methods.
+ */
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 @Rollback(true)
@@ -27,9 +29,9 @@ public class CustomerRepositoryTests {
 	@Autowired
 	private ZipCodeRepository zipCodeRepo;
 	
+	// test a method of saving a user into database
 	@Test
 	public void testCreateCustomer() {
-		
 		Customer customer = new Customer();
 		customer.setFirstName("Mikhail");
 		customer.setLastName("Basharin");
@@ -39,10 +41,17 @@ public class CustomerRepositoryTests {
 		customer.setPhone("484-515-6024");
 		customer.setEmail("mishabasharin@gamil.com");
 		customer.setPassword("Abc1234567");
-		
 		Customer savedCustomer = customerRepo.save(customer);
 		Customer existCustomer = entityManager.find(Customer.class, savedCustomer.getId());
-		
 		assertThat(customer.getEmail()).isEqualTo(existCustomer.getEmail());
-	}
-}
+	} // close testCreateCustomer()
+	
+	// test a method findCustomerByEmail()
+	@Test
+	public void testFindCustomerByEmail() {
+		String email = "mishabasharin@gmail.com";
+		Customer customer = customerRepo.findCustomerByEmail(email);
+		assertThat(customer).isNotNull();
+	} // close testFindCustomerByEmail()
+	
+} // close CustomerRepositoryTests class

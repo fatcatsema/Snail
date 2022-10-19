@@ -5,7 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import com.basharin.snail.entity.Customer;
 
-
+/*
+ * Interface to hold all abstract methods of Customer data manipulation.
+ */
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 

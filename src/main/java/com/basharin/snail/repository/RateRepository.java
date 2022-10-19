@@ -5,9 +5,12 @@ import org.springframework.stereotype.Repository;
 
 import com.basharin.snail.entity.Rate;
 
-
+/*
+ * Interface to hold all abstract methods of Rate data manipulation.
+ */
 @Repository
 public interface RateRepository extends JpaRepository<Rate, Long> {
 	
-	public Rate findByRoute(String route);
+	public Rate findRateByRoute(String route);
+	public Rate findRateByStationFromAndStationTo(String from, String to);
 }

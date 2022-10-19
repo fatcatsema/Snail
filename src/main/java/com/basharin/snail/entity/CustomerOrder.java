@@ -20,7 +20,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
-
+/*
+ * POJO class of CustomerOrder entity.
+ */
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -59,4 +61,5 @@ public class CustomerOrder implements Serializable {
 	@ManyToOne(targetEntity = Customer.class)
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
 	Customer customer;
-}
+	
+} // close CustomerOrder class

@@ -1,8 +1,6 @@
 package com.basharin.snail.entity;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +17,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
-
+/*
+ * POJO class of Cargo entity.
+ */
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -37,10 +37,10 @@ public class Cargo implements Serializable {
 	Long id;
 	
 	@Column(name = "weight", columnDefinition = "DECIMAL(10,1) NOT NULL")
-	BigDecimal weight;
+	Double weight;
 	
 	@Column(name = "price", columnDefinition = "DECIMAL(10,2) NOT NULL")
-	BigDecimal price;
+	Double price;
 	
 	@ManyToOne(targetEntity = Rate.class)
     @JoinColumn(name = "rate", referencedColumnName = "route")
@@ -57,4 +57,5 @@ public class Cargo implements Serializable {
 	@ManyToOne(targetEntity = ShoppingCart.class)
 	@JoinColumn(name = "cart_id", referencedColumnName = "id")
 	ShoppingCart shoppingCart;
-}
+	
+} // close Cargo class

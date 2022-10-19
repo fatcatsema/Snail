@@ -5,9 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.basharin.snail.entity.ShippingType;
 
-
+/*
+ * Interface to hold all abstract methods of ShippingType data manipulation.
+ */
 @Repository
 public interface ShippingTypeRepository extends JpaRepository<ShippingType, Long> {
 	
-	public ShippingType findByType(String type);
+	public ShippingType findShippingTypeByType(String type);
 }

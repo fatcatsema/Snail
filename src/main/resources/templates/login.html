@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="https://kit.fontawesome.com/f1216501c4.js" crossorigin="anonymous"></script>
@@ -20,16 +20,20 @@
         <input type="text" placeholder="Search.." />
     </nav>
     <h1>Login</h1>
-    <form th:action="@{/login}" method="post" style="width: 380px; height: 400px;">
-        <input type="email" id="username" name="username" placeholder="Enter your Email" required
-        	pattern="(\w\.?)+@[\w\.-]+\.\w{2,}" /><br/>
-        <input type="password" id="password" name="password" placeholder="Enter your Password" required
-        	minlength="8" maxlength="15" /><br/>
+    <form th:action="@{/login}" method="post" style="width: 380px; height: 400px">
+        <input type="email" name="email" placeholder="Enter your Email" required /><br/>
+        <input type="password" name="password" placeholder="Enter your Password" required /><br/>
         <input type="submit" value="LOGIN" /><br/><br/>
         <p style="margin-bottom: 5px; font-weight: 500">If you don't have your own station</p>
         <p style="margin: 0 0 5px 0; font-weight: 500"><a th:href="@{/registration}" style="color: black; font-weight: 600">click here</a></p>
         <p style="margin-top: 0; font-weight: 500">to go to Registration page.</p>
     </form>
+    <div th:if="${param.error}">
+       <div class="alert alert-danger">Invalid Email or Password</div>
+    </div>
+    <div th:if="${param.logout}">
+       <div class="alert alert-success"> You have been logged out.</div>
+    </div>
     <footer>
         <p>&copy SnailExpress</p>
     </footer>

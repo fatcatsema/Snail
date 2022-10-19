@@ -1,8 +1,6 @@
 package com.basharin.snail.entity;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +15,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
-
+/*
+ * POJO class of Rate entity.
+ */
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -44,5 +44,6 @@ public class Rate implements Serializable {
 	String stationTo;
 	
 	@Column(name = "fee_per_lb", columnDefinition = "DECIMAL(5,2) NOT NULL")
-	BigDecimal feePerLb;
-}
+	Double feePerLb;
+	
+} // close Rate class

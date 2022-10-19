@@ -27,10 +27,10 @@
         <input type="text" placeholder="Search.." />
     </nav>
     <h1>Calculate Your Shipment</h1>
-    <form style="width: 800px; height: 440px">
+    <form th:action="@{/calculation_process}" method="post" th:object="${cargo}" style="width: 800px; height: 440px">
         <div class="column">
-            <select id="from" name="from">
-                <option disabled hidden selected>Choose 'From' station</option>
+            <select id="from" name="from" th:field="*{from}" required>
+                <option value="" selected>Choose 'From' station</option>
                 <option value="albany">Albany</option>
                 <option value="baltimore">Baltimore</option>
                 <option value="boston">Boston</option>
@@ -42,8 +42,8 @@
                 <option value="richmond">Richmond</option>
                 <option value="washington">Washington</option>
             </select><br/>
-            <select id="to" name="to">
-                <option disabled hidden selected>Choose 'To' station</option>
+            <select id="to" name="to" th:field="*{to}" required>
+                <option value="" selected>Choose 'To' station</option>
                 <option value="albany">Albany</option>
                 <option value="baltimore">Baltimore</option>
                 <option value="boston">Boston</option>
@@ -55,26 +55,24 @@
                 <option value="richmond">Richmond</option>
                 <option value="washington">Washington</option>
             </select><br/>
-            <input type="number" id="weight" name="weight" placeholder="Input weight in pounds" /><br/>
-            <select id="cargotype" name="cargotype">
-                <option disabled hidden selected>Choose Type of Cargo</option>
+            <input type="number" id="weight" name="weight" th:field="*{weight}" required placeholder="Input weight in pounds" /><br/>
+            <select id="cargotype" name="cargotype" th:field="*{cargoType}" required>
+                <option value="" selected>Choose Type of Cargo</option>
                 <option value="ordinary">Ordinary</option>
                 <option value="hazard">Hazard</option>
             </select><br/>
-            <select id="shipmenttype" name="shipmenttype">
-                <option disabled hidden selected>Choose Type of Shipment</option>
+            <select id="shipmenttype" name="shipmenttype" th:field="*{shippingType}" required>
+                <option value="" selected>Choose Type of Shipment</option>
                 <option value="regular">Regular</option>
                 <option value="express">Express</option>
             </select><br/>
         </div>
         <div class="column">
-            <input type="button" value="CALCULATE" /><br/><br/>
+            <input type="submit" value="CALCULATE" /><br/><br/>
             <output style="width: 300px; color: white; font-size: 25px">
-            <span th:text="${@calculationService.calculatePrice(from, to, cargotype, shipmenttype, weight)}"></span>
+            <span th:text="${price}"></span>
             </output><br/><br/>
-            
-
-            <input type="submit" value="+ ADD TO CART" />
+<!--             <input type="submit" value="+ ADD TO CART" /> -->
                 <!-- onsubmit="return "/> -->
                 <!-- onclick="calculateShippingCost()" -->
         </div>

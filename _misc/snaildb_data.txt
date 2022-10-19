@@ -1,0 +1,149 @@
+INSERT INTO ZipCode (code, city, state)
+VALUES
+	('02113', 'Boston', 'Massachusetts'),
+	('02210', 'Boston', 'Massachusetts'),
+	('10001', 'New York', 'New York'),
+	('10024', 'New York', 'New York'),
+	('12210', 'Albany', 'New York'),
+	('14211', 'Buffalo', 'New York'),
+	('15212', 'Pittsburg', 'Pennsylvania'),
+	('19107', 'Philadelphia', 'Pennsylvania'),
+	('19130', 'Philadelphia', 'Pennsylvania'),
+	('20500', 'Washington', 'D.C.'),
+	('20560', 'Washington', 'D.C.'),
+	('21202', 'Baltimore', 'Maryland'),
+	('23218', 'Richmond', 'Virginia'),
+	('44114', 'Cleveland', 'Ohio');
+
+INSERT INTO Station (code, name, address, zip_code)
+VALUES
+	('ALB', 'Albany', '125 Washington Ave', '12210'),
+	('BAL', 'Baltimore', '501 E Pratt St', '21202'),
+	('BOS', 'Boston', '193 Salem St', '02113'),
+	('BUF', 'Buffalo', '1020 Humboldt Pkwy', '14211'),
+	('CLE', 'Cleveland', '1100 E 9th St', '44114'),
+	('NYC', 'NewYork', '200 Central Park West', '10024'),
+	('PHI', 'Philadelphia', '1400 John F Kennedy Blvd', '19107'),
+	('PIT', 'Pittsburg', '1 Allegheny Ave', '15212'),
+	('RIC', 'Richmond', '1000 Bank St', '23218'),
+	('WAS', 'Washington', '600 Independence Ave SW', '20560');
+
+INSERT INTO Rate (route, station_from, station_to, fee_per_lb)
+VALUES
+	('ALBBAL', 'Albany', 'Baltimore', 2.25),
+	('ALBBOS', 'Albany', 'Boston', 1.00),
+	('ALBBUF', 'Albany', 'Buffalo', 1.25),
+	('ALBCLE', 'Albany', 'Cleveland', 1.75),
+	('ALBNYC', 'Albany', 'NewYork', 1.00),
+	('ALBPHI', 'Albany', 'Philadelphia', 1.50),
+	('ALBPIT', 'Albany', 'Pittsburg', 2.00),
+	('ALBRIC', 'Albany', 'Richmond', 2.75),
+	('ALBWAS', 'Albany', 'Washington', 2.50),
+
+	('BALALB', 'Baltimore', 'Albany', 2.25),
+	('BALBOS', 'Baltimore', 'Boston', 2.50),
+	('BALBUF', 'Baltimore', 'Buffalo', 2.50),
+	('BALCLE', 'Baltimore', 'Cleveland', 2.25),
+	('BALNYC', 'Baltimore', 'NewYork', 1.25),
+	('BALPHI', 'Baltimore', 'Philadelphia', 0.75),
+	('BALPIT', 'Baltimore', 'Pittsburg', 1.50),
+	('BALRIC', 'Baltimore', 'Richmond', 1.00),
+	('BALWAS', 'Baltimore', 'Washington', 0.50),
+
+	('BOSALB', 'Boston', 'Albany', 1.00),
+	('BOSBAL', 'Boston', 'Baltimore', 2.50),
+	('BOSBUF', 'Boston', 'Buffalo', 1.75),
+	('BOSCLE', 'Boston', 'Cleveland', 2.25),
+	('BOSNYC', 'Boston', 'NewYork', 1.25),
+	('BOSPHI', 'Boston', 'Philadelphia', 1.75),
+	('BOSPIT', 'Boston', 'Pittsburg', 2.75),
+	('BOSRIC', 'Boston', 'Richmond', 3.25),
+	('BOSWAS', 'Boston', 'Washington', 2.75),
+
+	('BUFALB', 'Buffalo', 'Albany', 1.25),
+	('BUFBAL', 'Buffalo', 'Baltimore', 2.50),
+	('BUFBOS', 'Buffalo', 'Boston', 1.75),
+	('BUFCLE', 'Buffalo', 'Cleveland', 1.00),
+	('BUFNYC', 'Buffalo', 'NewYork', 1.50),
+	('BUFPHI', 'Buffalo', 'Philadelphia', 1.50),
+	('BUFPIT', 'Buffalo', 'Pittsburg', 1.25),
+	('BUFRIC', 'Buffalo', 'Richmond', 3.00),
+	('BUFWAS', 'Buffalo', 'Washington', 2.75),
+
+	('CLEALB', 'Cleveland', 'Albany', 1.75),
+	('CLEBAL', 'Cleveland', 'Baltimore', 2.25),
+	('CLEBOS', 'Cleveland', 'Boston', 2.25),
+	('CLEBUF', 'Cleveland', 'Buffalo', 1.00),
+	('CLENYC', 'Cleveland', 'NewYork', 2.00),
+	('CLEPHI', 'Cleveland', 'Philadelphia', 2.00),
+	('CLEPIT', 'Cleveland', 'Pittsburg', 0.75),
+	('CLERIC', 'Cleveland', 'Richmond', 2.50),
+	('CLEWAS', 'Cleveland', 'Washington', 2.00),
+
+	('NYCALB', 'NewYork', 'Albany', 1.00),
+	('NYCBAL', 'NewYork', 'Baltimore', 1.25),
+	('NYCBOS', 'NewYork', 'Boston', 1.25),
+	('NYCBUF', 'NewYork', 'Buffalo', 1.50),
+	('NYCCLE', 'NewYork', 'Cleveland', 2.00),
+	('NYCPHI', 'NewYork', 'Philadelphia', 0.75),
+	('NYCPIT', 'NewYork', 'Pittsburg', 1.75),
+	('NYCRIC', 'NewYork', 'Richmond', 2.25),
+	('NYCWAS', 'NewYork', 'Washington', 1.25),
+
+	('PHIALB', 'Philadelphia', 'Albany', 1.50),
+	('PHIBAL', 'Philadelphia', 'Baltimore', 0.75),
+	('PHIBOS', 'Philadelphia', 'Boston', 1.75),
+	('PHIBUF', 'Philadelphia', 'Buffalo', 1.50),
+	('PHICLE', 'Philadelphia', 'Cleveland', 2.00),
+	('PHINYC', 'Philadelphia', 'NewYork', 0.75),
+	('PHIPIT', 'Philadelphia', 'Pittsburg', 1.75),
+	('PHIRIC', 'Philadelphia', 'Richmond', 2.00),
+	('PHIWAS', 'Philadelphia', 'Washington', 1.00),
+
+	('PITALB', 'Pittsburg', 'Albany', 2.00),
+	('PITBAL', 'Pittsburg', 'Baltimore', 1.50),
+	('PITBOS', 'Pittsburg', 'Boston', 2.75),
+	('PITBUF', 'Pittsburg', 'Buffalo', 1.25),
+	('PITCLE', 'Pittsburg', 'Cleveland', 0.75),
+	('PITNYC', 'Pittsburg', 'NewYork', 1.75),
+	('PITPHI', 'Pittsburg', 'Philadelphia', 1.75),
+	('PITRIC', 'Pittsburg', 'Richmond', 2.00),
+	('PITWAS', 'Pittsburg', 'Washington', 1.50),
+
+	('RICALB', 'Richmond', 'Albany', 2.75),
+	('RICBAL', 'Richmond', 'Baltimore', 1.00),
+	('RICBOS', 'Richmond', 'Boston', 3.25),
+	('RICBUF', 'Richmond', 'Buffalo', 3.00),
+	('RICCLE', 'Richmond', 'Cleveland', 2.50),
+	('RICNYC', 'Richmond', 'NewYork', 2.25),
+	('RICPHI', 'Richmond', 'Philadelphia', 2.00),
+	('RICPIT', 'Richmond', 'Pittsburg', 2.00),
+	('RICWAS', 'Richmond', 'Washington', 1.00),
+
+	('WASALB', 'Washington', 'Albany', 2.50),
+	('WASBAL', 'Washington', 'Baltimore', 0.50),
+	('WASBOS', 'Washington', 'Boston', 2.75),
+	('WASBUF', 'Washington', 'Buffalo', 2.75),
+	('WASCLE', 'Washington', 'Cleveland', 2.00),
+	('WASNYC', 'Washington', 'NewYork', 1.25),
+	('WASPHI', 'Washington', 'Philadelphia', 1.00),
+	('WASPIT', 'Washington', 'Pittsburg', 1.50),
+	('WASRIC', 'Washington', 'Richmond', 1.00);
+
+INSERT INTO CargoType (type, rate)
+VALUES
+	('Common', 1.00),
+	('Hazardous', 2.00);
+
+INSERT INTO ShippingType (type, rate)
+VALUES
+	('Express', 2.00),
+	('Regular', 1.00);
+
+INSERT INTO Customer (id, first_name, last_name, date_of_birth, address, zip_code, phone, email)
+VALUES
+	(NULL, 'Alex', 'Ovechkin', '1985-09-17', '1600 Pennsylvania Avenue NW', '20500', '111-222-33-44', 'ovi@yahoo.com'),
+	(NULL, 'Kirill', 'Kaprizov', '1997-04-26', '20 W 34th St.', '10001', '222-111-00-99', 'kiril@yahoo.com'),
+	(NULL, 'Nikita', 'Kucherov', '1993-06-17', '2600 Benjamin Franklin Pkwy', '19130', '344-222-11-23', 'kuch@yahoo.com'),
+	(NULL, 'Valeri', 'Nichushkin', '1995-03-04', '10 Childrens Way', '15212', '444-555-11-00', 'val@gmail.com'),
+	(NULL, 'Artemi', 'Panarin', '1991-10-30', '25 Harbor Shore Dr', '02210', '121-333-55-77', 'art@gmail.com');

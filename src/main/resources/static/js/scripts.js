@@ -27,6 +27,7 @@ function calculateShippingCost() {
 }*/
 
 
+/*
 // function to format date type of 'dob' field
 function formatDate() {
 	
@@ -37,19 +38,20 @@ function formatDate() {
 	let newDate = newYear + "-" + "0" + newMonth + "-" + newDay;
 	document.getElementById("dob").innerHTML = newDate;
 	//return newDateString;
-}
-	
-	
+}*/
+
+
+/*	
 function checkZipCode() {
 	
 	const zipCodes = ["02113", "02210"];
 	let userZipCode = document.getElementById("zipcode").value;
 	for (zipCode in zipCodes) {
 		if (zipCode == userZipCode) {
-			document.getElementById("zipcode").innerHTML = zipCode;
+			document.getElementById("zipcode").value = zipCode;
 			break;
 		} else {
-			document.getElementById("zipcode").innerHTML = "Please enter a valid ZIP Code"
+			alert("Incorrect ZIP Code");
 		}
 	}
-}
+}*/

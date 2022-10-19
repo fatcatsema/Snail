@@ -16,7 +16,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
-
+/*
+ * POJO class of ZipCode entity.
+ */
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -41,4 +43,5 @@ public class ZipCode implements Serializable {
 	
 	@Column(name = "state", columnDefinition = "VARCHAR(25) NOT NULL")
 	String state;
-}
+	
+} // close ZipCode class

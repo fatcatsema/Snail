@@ -18,7 +18,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
-
+/*
+ * POJO class of Station entity.
+ */
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @AllArgsConstructor
@@ -47,4 +49,5 @@ public class Station implements Serializable {
 	@ManyToOne(targetEntity = ZipCode.class)
     @JoinColumn(name = "zip_code", referencedColumnName = "code")
 	ZipCode zipCode;
-}
+	
+} // close Station class

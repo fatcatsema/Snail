@@ -5,9 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.basharin.snail.entity.CargoType;
 
-
+/*
+ * Interface to hold all abstract methods of CargoType data manipulation.
+ */
 @Repository
 public interface CargoTypeRepository extends JpaRepository<CargoType, Long> {
 
-	public CargoType findByType(String type);
+	public CargoType findCargoTypeByType(String type);
 }
