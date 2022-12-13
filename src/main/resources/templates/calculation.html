@@ -31,50 +31,54 @@
         <div class="column">
             <select id="from" name="from" th:field="*{from}" required>
                 <option value="" selected>Choose 'From' station</option>
-                <option value="albany">Albany</option>
-                <option value="baltimore">Baltimore</option>
-                <option value="boston">Boston</option>
-                <option value="buffalo">Buffalo</option>
-                <option value="cleveland">Cleveland</option>
-                <option value="newyork">New York</option>
-                <option value="philadelphia">Philadelphia</option>
-                <option value="pittsburg">Pittsburg</option>
-                <option value="richmond">Richmond</option>
-                <option value="washington">Washington</option>
+                <option value="Albany">Albany</option>
+                <option value="Baltimore">Baltimore</option>
+                <option value="Boston">Boston</option>
+                <option value="Buffalo">Buffalo</option>
+                <option value="Cleveland">Cleveland</option>
+                <option value="New York">New York</option>
+                <option value="Philadelphia">Philadelphia</option>
+                <option value="Pittsburg">Pittsburg</option>
+                <option value="Richmond">Richmond</option>
+                <option value="Washington">Washington</option>
             </select><br/>
             <select id="to" name="to" th:field="*{to}" required>
                 <option value="" selected>Choose 'To' station</option>
-                <option value="albany">Albany</option>
-                <option value="baltimore">Baltimore</option>
-                <option value="boston">Boston</option>
-                <option value="buffalo">Buffalo</option>
-                <option value="cleveland">Cleveland</option>
-                <option value="newyork">New York</option>
-                <option value="philadelphia">Philadelphia</option>
-                <option value="pittsburg">Pittsburg</option>
-                <option value="richmond">Richmond</option>
-                <option value="washington">Washington</option>
+                <option value="Albany">Albany</option>
+                <option value="Baltimore">Baltimore</option>
+                <option value="Boston">Boston</option>
+                <option value="Buffalo">Buffalo</option>
+                <option value="Cleveland">Cleveland</option>
+                <option value="New York">New York</option>
+                <option value="Philadelphia">Philadelphia</option>
+                <option value="Pittsburg">Pittsburg</option>
+                <option value="Richmond">Richmond</option>
+                <option value="Washington">Washington</option>
             </select><br/>
             <input type="number" id="weight" name="weight" th:field="*{weight}" required placeholder="Input weight in pounds" /><br/>
             <select id="cargotype" name="cargotype" th:field="*{cargoType}" required>
                 <option value="" selected>Choose Type of Cargo</option>
-                <option value="ordinary">Ordinary</option>
-                <option value="hazard">Hazard</option>
+                <option value="Common">Common</option>
+                <option value="Hazardous">Hazardous</option>
             </select><br/>
             <select id="shipmenttype" name="shipmenttype" th:field="*{shippingType}" required>
                 <option value="" selected>Choose Type of Shipment</option>
-                <option value="regular">Regular</option>
-                <option value="express">Express</option>
+                <option value="Regular">Regular</option>
+                <option value="Express">Express</option>
             </select><br/>
         </div>
         <div class="column">
             <input type="submit" value="CALCULATE" /><br/><br/>
-            <output style="width: 300px; color: white; font-size: 25px">
-            <span th:text="${price}"></span>
-            </output><br/><br/>
-<!--             <input type="submit" value="+ ADD TO CART" /> -->
-                <!-- onsubmit="return "/> -->
-                <!-- onclick="calculateShippingCost()" -->
+            <p style="margin: 20px 60px; width: 250px; height: 200px; border: 5px solid green; border-radius: 10px">
+            	<p>Price:</p>
+            	<output style="width: 300px; color: white; font-size: 25px">
+            		<span th:text="${price}"></span>
+            	</output><br/><br/>
+            	<p>Delivery Time:</p>
+            	<output style="width: 300px; color: white; font-size: 25px">
+            		<span th:text="${time}"></span>
+            	</output>
+            </p>
         </div>
     </form>
     <footer>

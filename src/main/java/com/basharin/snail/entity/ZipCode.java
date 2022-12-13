@@ -4,8 +4,6 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -31,11 +29,7 @@ public class ZipCode implements Serializable {
 	static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	Long id;
-	
-	@Column(name = "code", columnDefinition = "VARCHAR(5) NOT NULL UNIQUE")
+	@Column(name = "code", columnDefinition = "VARCHAR(5) NOT NULL")
 	String code;
 	
 	@Column(name = "city", columnDefinition = "VARCHAR(25) NOT NULL")

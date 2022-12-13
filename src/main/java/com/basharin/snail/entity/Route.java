@@ -3,8 +3,6 @@ package com.basharin.snail.entity;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -24,18 +22,14 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @Setter
 @Entity
-@Table(name = "rate")
-public class Rate implements Serializable {
+@Table(name = "route")
+public class Route implements Serializable {
 	
 	static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	Long id;
-	
-	@Column(name = "route", columnDefinition = "VARCHAR(6) NOT NULL UNIQUE")
-	String route;
+	@Column(name = "code", columnDefinition = "VARCHAR(6) NOT NULL")
+	String code;
 	
 	@Column(name = "station_from", columnDefinition = "VARCHAR(20) NOT NULL")
 	String stationFrom;
@@ -45,5 +39,8 @@ public class Rate implements Serializable {
 	
 	@Column(name = "fee_per_lb", columnDefinition = "DECIMAL(5,2) NOT NULL")
 	Double feePerLb;
+	
+	@Column(name = "delivery_time", columnDefinition = "INTEGER(2) NOT NULL")
+	Integer deliveryTime;
 	
 } // close Rate class

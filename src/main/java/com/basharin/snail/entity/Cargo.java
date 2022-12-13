@@ -42,9 +42,9 @@ public class Cargo implements Serializable {
 	@Column(name = "price", columnDefinition = "DECIMAL(10,2) NOT NULL")
 	Double price;
 	
-	@ManyToOne(targetEntity = Rate.class)
-    @JoinColumn(name = "rate", referencedColumnName = "route")
-	Rate rate;
+	@ManyToOne(targetEntity = Route.class)
+    @JoinColumn(name = "route", referencedColumnName = "code")
+	Route route;
 	
 	@ManyToOne(targetEntity = CargoType.class)
     @JoinColumn(name = "cargo_type", referencedColumnName = "type")

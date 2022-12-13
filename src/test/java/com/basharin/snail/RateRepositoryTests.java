@@ -9,8 +9,8 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 
-import com.basharin.snail.entity.Rate;
-import com.basharin.snail.repository.RateRepository;
+import com.basharin.snail.entity.Route;
+import com.basharin.snail.repository.RouteRepository;
 
 /*
  * Class to test RateRepository methods.
@@ -21,16 +21,16 @@ import com.basharin.snail.repository.RateRepository;
 public class RateRepositoryTests {
 	
 	@Autowired
-	private RateRepository rateRepo;
+	private RouteRepository rateRepo;
 	
 	// test a method findRateByStationFromAndStationTo()
 	@Test
 	public void testFindRateByStationFromAndStationTo() {
-		String from = "Philadelphia";
-		String to = "Pittsburg";
-		Rate rate = rateRepo.findRateByStationFromAndStationTo(from, to);
-		assertThat(rate).isNotNull();
-		System.out.println(rate.getFeePerLb());
+		String from = "Albany";
+		String to = "Baltimore";
+		Route route = rateRepo.findRouteByStationFromAndStationTo(from, to);
+		assertThat(route).isNotNull();
+		System.out.println(route.getFeePerLb());
 	} // close testFindRateByStationFromAndStationTo()
 	
 } // close RateRepositoryTests class

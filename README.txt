@@ -28,7 +28,7 @@ The app has navigation bar.
 	- go to the Contacts page (the company contacts);
 	- go to the Account (personal page) if a user is registered and authorised. If not, it redirects to the Login page.
 
-Also there is a seraching input field to search the information inside the site.
+Also there is a search input field to search the information through the site.
 
 *********************************************************************
 

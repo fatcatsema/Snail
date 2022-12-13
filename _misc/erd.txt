@@ -1,0 +1,6 @@
+Shopping Cart Id: C + customer_id
+
+Cargo Id: cart_id + date and time of creation (adding to cart)
+
+Order Id: 'O' + cargo_id
+
